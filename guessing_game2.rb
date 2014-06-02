@@ -1,4 +1,5 @@
 class GuessingGame
+	/Make a constant that's used, but never changed by the code/
 	MAX_GUESSES = 3
 
 	/initialize instance variables/
@@ -6,24 +7,19 @@ class GuessingGame
 		@number_to_guess = rand(1 .. 10)
 		@won = false
 	end 
-	/done with initializing/
 
-	/call the methods that run the game/
 	def play 
 		display_welcome_message
 		get_guesses
 	end
-	/ends the play method/
 
 private 
 
-	/show a message telling people asking people to come play/
 	def display_welcome_message
 		welcome_message = "Come play a guessing game with me!"
 		puts welcome_message
 		puts "*" * welcome_message.length
 	end
-	/ends the display_welcome_message method/
 
 	/predicate method to make the code cleaner, question mark indicates this returns boolean/
 	 def won?
@@ -36,26 +32,24 @@ private
 	end
 	/ends won bang metod/
 
-	/make the code cleaner, returns the number, so you can just call the method/
+	/make the code cleaner, returns the number, so you can just call the method name, leaving out the @/
 	def number_to_guess
 		@number_to_guess
 	end
-	/end the method that returns the number to guess/
 
 	/get the player's guesses/
 	 def get_guesses
 		
-		/Start the MAX_GUESSES loop/
 		MAX_GUESSES.times do 
 			get_guess
 
-			/if the user guessed the right number, break out of the loop/
-			if @won
+			if won?
 				break
+			else
+				puts "Nope, try again"
 			end
-			/end the if/
+
 		end
-		/end of the MAX_GUESSES loop/
 
 
 		if won?
@@ -63,10 +57,8 @@ private
 		else
 			puts "You lost! The number was #{number_to_guess}."
 		end
-		/end of the if that checks whether or not the user won/
 	
 	end	
-	/end of get_guesses method/
 
 
 
@@ -79,10 +71,7 @@ private
 
 		if guess == number_to_guess
 			won!
-		else
-			puts "Incorrect, try again"
 		end
-		/end of the if/
 
 	end
 	/end of the get_guess (singular) method/

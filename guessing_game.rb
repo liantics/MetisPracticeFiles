@@ -31,10 +31,17 @@ private
 	end
 
 	def get_guesses
+		attempts_left = MAX_ATTEMPTS
 		MAX_ATTEMPTS.times do
+
 			get_guess
 			if won?
 				break
+			elsif attempts_left > 1
+				remaining = attempts_left-1
+				puts "Nope. #{remaining} tries remaining"
+				puts ""
+			  attempts_left -= 1
 			end
 		end
 
@@ -50,7 +57,7 @@ private
 		prompt = "Guess a number from #{@min_guess} to #{@max_guess} \> "
 		print prompt
 		response = gets.to_i
-		/puts "you entered " + response.inspect/
+		puts "you entered " + response.inspect
 
 			if @value_to_match == response
 				won!
