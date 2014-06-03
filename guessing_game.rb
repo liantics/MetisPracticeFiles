@@ -1,6 +1,6 @@
 class GuessingGame
 
-	MAX_ATTEMPTS = 3
+	MAX_ATTEMPTS = 5
 
 
   /in ruby initialize is called when you call .new/
@@ -10,7 +10,7 @@ class GuessingGame
 
 	def initialize 
 		@min_guess = 1
-		@max_guess = 50
+		@max_guess = 25
 		@remaining_attempts = MAX_ATTEMPTS
 		@value_to_match = @min_guess + rand(@max_guess)	
 		@won = false

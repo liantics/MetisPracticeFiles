@@ -1,6 +1,6 @@
 class GuessingGame
 	/Make a constant that's used, but never changed by the code/
-	MAX_GUESSES = 3
+	MAX_GUESSES = 5
 
 	/initialize instance variables/
 	def initialize
