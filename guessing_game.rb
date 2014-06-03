@@ -2,6 +2,7 @@ class GuessingGame
 
 	MAX_ATTEMPTS = 3
 
+
   /in ruby initialize is called when you call .new/
   /you cannot call this method directly, ruby calls it, not you/
   /so don't use initialize in any other chunk of code/
@@ -9,7 +10,8 @@ class GuessingGame
 
 	def initialize 
 		@min_guess = 1
-		@max_guess = 100
+		@max_guess = 50
+		@remaining_attempts = MAX_ATTEMPTS
 		@value_to_match = @min_guess + rand(@max_guess)	
 		@won = false
 		@cheat_mode = false
@@ -31,17 +33,14 @@ private
 	end
 
 	def get_guesses
-		attempts_left = MAX_ATTEMPTS
+
 		MAX_ATTEMPTS.times do
 
 			get_guess
 			if won?
 				break
-			elsif attempts_left > 1
-				remaining = attempts_left-1
-				puts "Nope. #{remaining} tries remaining"
-				puts ""
-			  attempts_left -= 1
+			else 
+				get_remaining_attempts
 			end
 		end
 
@@ -57,9 +56,11 @@ private
 		prompt = "Guess a number from #{@min_guess} to #{@max_guess} \> "
 		print prompt
 		response = gets.to_i
-		puts "you entered " + response.inspect
+		/ puts "you entered " + response.inspect /
 
-			if @value_to_match == response
+			if response > @max_guess || response < @min_guess
+				puts "That value was not between #{@min_guess} and #{@max_guess}"
+			elsif @value_to_match == response
 				won!
 			end
 	end
@@ -71,6 +72,37 @@ private
  def won!
 		@won = true
 	end
+
+	def get_remaining_attempts
+		if remaining_attempts?
+			remaining_attempts!
+			if remaining_attempts == 1
+				puts "One last try ..."
+				puts ""
+			elsif remaining_attempts > 1
+				puts "You have #{remaining_attempts} tries remaining"
+				puts ""
+			end
+		end
+	end
+
+	def remaining_attempts?
+		if @remaining_attempts == 1
+			false
+		else
+			true
+		end
+	end
+
+	def remaining_attempts
+			@remaining_attempts
+		end
+
+		
+	def remaining_attempts!
+		@remaining_attempts -= 1
+	end
+
 end
 game = GuessingGame.new
 game.play
