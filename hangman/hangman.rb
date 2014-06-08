@@ -15,18 +15,7 @@
 
 
 class Hangman
-	TEST_MODE_PLAY = false
-	TEST_MODE_ASK_FOR_A_GUESS = false
-	TEST_MODE_GET_GUESSES = false
-	TEST_MODE_READ_A_WORD = false
-	TEST_MODE_FILL_BLANKS_FOR_WORD = false
-	TEST_MODE_GET_NUM_WORDS_IN_FILE = true
-	TEST_MODE_SHOW_RESULTS = true
-	TEST_MODE_DOES_IT_MATCH = false
-
-
-
-
+	MAX_BAD_GUESSES = 6
 	
 	def initialize(filename)
 		@filename = filename
@@ -119,7 +108,7 @@ def	get_guesses
  	#While the user hasn't made 6 bad guesses (head, torso, arms, legs) in a row, get the next guess
  	if @letters_remain
  		are_there_any_letters_left?
-	 	while @bad_guesses < 6 && @letters_remain
+	 	while @bad_guesses < MAX_BAD_GUESSES && @letters_remain
 	 		puts
 	 		this_letter = ask_for_a_guess
 	 		does_it_match?(this_letter) 
@@ -176,6 +165,44 @@ def does_it_match?(this_letter)
 			match
 	end #def does_it_match?
 
+# **************** Make the Hangman ***************
+# Make an ascii hangman picture to show
+# status based on number of bad guesses
+# **************** Make the Hangman ***************
+
+def hang_man
+	puts
+	puts " _________"	
+	if @bad_guesses >= 1
+		puts " |/      |"
+	end
+
+	if @bad_guesses >= 2
+		puts " |      (_)"
+	end
+
+	if @bad_guesses >= 3
+		puts " |      \\|/"
+	end
+
+	if @bad_guesses >= 4
+		puts " |       |"		
+	end
+
+	if @bad_guesses >= 5
+		puts " |       |"		
+	end
+
+	if @bad_guesses >= MAX_BAD_GUESSES
+		puts " |      / \\ "
+		puts " |"
+		puts "_|___"
+		puts ""
+	end
+end
+
+
+
 # ****************  Fill in Blanks **************** 
 # fills comparison array with underscores
 # ****************  Fill in blanks **************** 
@@ -189,14 +216,16 @@ def does_it_match?(this_letter)
 	end #are there letters 
 
 	def show_results
-		if @bad_guesses == 6 && are_there_any_letters_left?
+		if @bad_guesses == MAX_BAD_GUESSES && are_there_any_letters_left?
 			puts
-			puts "Nice try The word was \"#{@letters.join}\""
+			puts "Nice try! The word was \"#{@letters.join}\""
 			puts
+			hang_man
 		else
 			puts
 			puts "Hooray! The word was \"#{@letters.join}\" and you entered \"#{@matching_guess_list.join}\""
 			puts
+			hang_man
 		end #if
 	end #def show results
 
@@ -220,6 +249,8 @@ def does_it_match?(this_letter)
 			@bad_guesses = 0
 		end #if
 	end #def want_to_play_again
+
+
 
 end
 
