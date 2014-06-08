@@ -126,6 +126,7 @@ def ask_for_a_guess
 	puts
 	puts "Guess a letter"
 	puts "Letters so far: #{@matching_guess_list.join}"
+	hang_man
 	puts
 	this_letter = gets.chomp.downcase
 	puts
@@ -172,8 +173,9 @@ def does_it_match?(this_letter)
 
 def hang_man
 	puts
-	puts " _________"	
+	
 	if @bad_guesses >= 1
+		puts " _________"	
 		puts " |/      |"
 	end
 
