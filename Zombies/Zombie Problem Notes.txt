@@ -1,0 +1,7 @@
+Zombie problem:
+
+Each scenario is 2 numbers and 2 lists of words, not a single dictionary
+
+dictionary, and a list of zombie words
+dictionary, and a list of zombie words
+dictionary, and a list of zombie words
