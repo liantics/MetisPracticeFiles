@@ -1,0 +1,17 @@
+get_artist_name
+ puts "between get artist name and perform search"
+Perform_search
+ puts "between get perform search and show results"
+get_results
+
+
+
+------------------
+Artist, Name
+
+songs_by_artist[Dave Matthews Band, songs[] ]
+
+--- [Dave Matthews Band, [Belly Belly Nice, Broken Things, Mercy] ]
+
+
+-----------------

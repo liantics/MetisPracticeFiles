@@ -1,0 +1,42 @@
+
+
+~/Documents/WebDevandWork/code $ rvmsudo install ruby-2.1.2-stableWarning: can not check `/etc/sudoers` for `secure_path`, falling back to call via `/usr/bin/env`, this breaks rules from `/etc/sudoers`. Run:
+
+    export rvmsudo_secure_path=1
+
+to avoid the warning, put it in shell initialization file to make it persistent.
+
+In case there is no `secure_path` in `/etc/sudoers`. Run:
+
+    export rvmsudo_secure_path=0
+
+to avoid the warning, put it in shell initialization file to make it persistent.
+usage: install [-bCcpSsv] [-B suffix] [-f flags] [-g group] [-m mode]
+               [-o owner] file1 file2
+       install [-bCcpSsv] [-B suffix] [-f flags] [-g group] [-m mode]
+               [-o owner] file1 ... fileN directory
+       install -d [-v] [-g group] [-m mode] [-o owner] directory ...
+~/Documents/WebDevandWork/code $ 
+
+
+-----------------
+-----------------
+
+Error running 'requirements_smf_update_system ruby-2.1.2',
+showing last 15 lines of /usr/local/rvm/log/1402425095_ruby-2.1.2/update_system.log
+vi +330 core/sm/shell/log/functions           # __sm.log.fail                                               
+vi +188 core/internal/shell/files/functions   # __sm.files.chmod                                               
+vi +255 core/api/shell/files/functions        # files                                               
+vi +47  core/api/shell/files/functions        # file                                               
+vi +264 core/install/shell//functions         # install_sm_util                                               
+vi +17  core/install/shell//functions         # perform                                               
+vi +324 core/install/shell//functions         # install_sm                                               
+vi +403 core/sm/shell/log/functions           # __sm.actions.call                                               
+vi +137 core/sm/shell/core/initialize         # /opt/sm/src/sm/core/sm/shell/core/initialize                                               
+vi +29  local                                 # /opt/sm/src/sm/local                                               
+================================================================================
+++ return 1
+++ return 1
+++ return 1
+++ return 1
+Requirements installation failed with status: 1.

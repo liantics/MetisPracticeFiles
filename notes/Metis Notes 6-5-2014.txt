@@ -1,0 +1,5 @@
+Metis Notes 6-5-2014
+
+
+#Note: DO NOT require a .csv FILE. Ruby can only understand how to import ruby files, so 
+#in the background, it tries to add the .rb extension, and chokes on the now-bad file name

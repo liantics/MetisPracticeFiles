@@ -1,0 +1,447 @@
+Last login: Sun Jun  8 19:50:13 on ttys002
+Macintosh-2:metis-class lianeallen$ cd musical chairs
+-bash: cd: musical: No such file or directory
+Macintosh-2:metis-class lianeallen$ subl .
+Macintosh-2:metis-class lianeallen$ ruby musical_chairs.rb
+ruby: No such file or directory -- musical_chairs.rb (LoadError)
+Macintosh-2:metis-class lianeallen$ cd ..
+Macintosh-2:metis lianeallen$ cd metis-class
+Macintosh-2:metis-class lianeallen$ ls
+README.md		guessing_game		mud_minder
+Zombies			hangman			music_problem
+age_sort		locker_challenge	musical_chairs
+flash_cards		lottery			my_hash.rb
+Macintosh-2:metis-class lianeallen$ cd musical_chairs
+Macintosh-2:musical_chairs lianeallen$ ls
+chairs.in		chairs.rb		musical_chairs.rb
+Macintosh-2:musical_chairs lianeallen$ ruby musical_chairs.rb
+Macintosh-2:musical_chairs lianeallen$ ls
+chairs.in		chairs.rb
+chairs.out		musical_chairs.rb
+Macintosh-2:musical_chairs lianeallen$ subl .
+Macintosh-2:musical_chairs lianeallen$ chairs.rb
+-bash: chairs.rb: command not found
+Macintosh-2:musical_chairs lianeallen$ ruby chairs.rb
+chairs.rb:23: syntax error, unexpected $end, expecting keyword_end
+musical_chairs.run
+                  ^
+Macintosh-2:musical_chairs lianeallen$ ruby chairs.rb
+chairs.rb:11:in `block in run': undefined method `split' for #<File:chairs.in> (NoMethodError)
+	from chairs.rb:10:in `each'
+	from chairs.rb:10:in `each_with_index'
+	from chairs.rb:10:in `run'
+	from chairs.rb:24:in `<main>'
+Macintosh-2:musical_chairs lianeallen$ ruby chairs.rb
+chairs.rb:11:in `block in run': undefined method `split' for #<File:chairs.in> (NoMethodError)
+	from chairs.rb:10:in `each'
+	from chairs.rb:10:in `each_with_index'
+	from chairs.rb:10:in `run'
+	from chairs.rb:24:in `<main>'
+Macintosh-2:musical_chairs lianeallen$ ruby chairs.rb
+chairs.rb:12:in `block in run': undefined method `split' for #<File:chairs.in> (NoMethodError)
+	from chairs.rb:11:in `each'
+	from chairs.rb:11:in `each_with_index'
+	from chairs.rb:11:in `run'
+	from chairs.rb:25:in `<main>'
+Macintosh-2:musical_chairs lianeallen$ ruby chairs.rb
+chairs.rb:11:in `block in run': undefined method `split' for #<File:chairs.in> (NoMethodError)
+	from chairs.rb:10:in `each_index'
+	from chairs.rb:10:in `run'
+	from chairs.rb:24:in `<main>'
+Macintosh-2:musical_chairs lianeallen$ ruby chairs.rb
+chairs.rb:11:in `block in run': undefined method `split' for 0:Fixnum (NoMethodError)
+	from chairs.rb:10:in `each_index'
+	from chairs.rb:10:in `run'
+	from chairs.rb:24:in `<main>'
+Macintosh-2:musical_chairs lianeallen$ ruby chairs.rb
+Round #1: There are 0 students eliminated.
+Round #2: There are 4 students eliminated.
+Round #3: There are 0 students eliminated.
+Round #4: There are 199 students eliminated.
+Round #5: There are 41 students eliminated.
+Round #6: There are 198 students eliminated.
+Round #7: There are 1 students eliminated.
+Round #8: There are 99 students eliminated.
+Round #9: There are 0 students eliminated.
+Round #10: There are 198 students eliminated.
+Round #11: There are 1 students eliminated.
+Macintosh-2:musical_chairs lianeallen$ ruby chairs.rb
+chairs.rb:28: syntax error, unexpected keyword_end, expecting $end
+Macintosh-2:musical_chairs lianeallen$ ruby chairs.rb
+chairs.rb:21:in `run': undefined local variable or method `index' for #<MusicalChairs:0x007fbd740868b0> (NameError)
+	from chairs.rb:29:in `<main>'
+Macintosh-2:musical_chairs lianeallen$ ruby chairs.rb
+chairs.rb:16:in `block in run': undefined method `split' for 0:Fixnum (NoMethodError)
+	from chairs.rb:10:in `each_index'
+	from chairs.rb:10:in `run'
+	from chairs.rb:29:in `<main>'
+Macintosh-2:musical_chairs lianeallen$ ruby chairs.rb
+chairs.rb:19:in `block in run': undefined local variable or method `chairless_students' for #<MusicalChairs:0x007ff2db8867a8> (NameError)
+	from chairs.rb:10:in `each'
+	from chairs.rb:10:in `each_with_index'
+	from chairs.rb:10:in `run'
+	from chairs.rb:27:in `<main>'
+Macintosh-2:musical_chairs lianeallen$ ruby chairs.rb
+chairs.rb:19:in `write': closed stream (IOError)
+	from chairs.rb:19:in `puts'
+	from chairs.rb:19:in `block in run'
+	from chairs.rb:10:in `each'
+	from chairs.rb:10:in `each_with_index'
+	from chairs.rb:10:in `run'
+	from chairs.rb:27:in `<main>'
+Macintosh-2:musical_chairs lianeallen$ ruby chairs.rb
+chairs.rb:19:in `write': closed stream (IOError)
+	from chairs.rb:19:in `puts'
+	from chairs.rb:19:in `block in run'
+	from chairs.rb:10:in `each'
+	from chairs.rb:10:in `each_with_index'
+	from chairs.rb:10:in `run'
+	from chairs.rb:27:in `<main>'
+Macintosh-2:musical_chairs lianeallen$ ruby chairs.rb
+chairs.rb:16:in `block in run': undefined method `split' for 0:Fixnum (NoMethodError)
+	from chairs.rb:10:in `each_index'
+	from chairs.rb:10:in `run'
+	from chairs.rb:27:in `<main>'
+Macintosh-2:musical_chairs lianeallen$ ruby chairs.rb
+chairs.rb:19:in `block in run': undefined method `+' for nil:NilClass (NoMethodError)
+	from chairs.rb:10:in `each'
+	from chairs.rb:10:in `run'
+	from chairs.rb:27:in `<main>'
+Macintosh-2:musical_chairs lianeallen$ ruby chairs.rb
+chairs.rb:19:in `block in run': undefined local variable or method `index' for #<MusicalChairs:0x007fcd6c07f3c8> (NameError)
+	from chairs.rb:10:in `each'
+	from chairs.rb:10:in `run'
+	from chairs.rb:27:in `<main>'
+Macintosh-2:musical_chairs lianeallen$ ruby chairs.rb
+chairs.rb:28:in `<main>': undefined method `runend' for #<MusicalChairs:0x007fb6bc102ac8> (NoMethodError)
+Macintosh-2:musical_chairs lianeallen$ ruby chairs.rb
+chairs.rb:20:in `write': closed stream (IOError)
+	from chairs.rb:20:in `puts'
+	from chairs.rb:20:in `block in run'
+	from chairs.rb:11:in `each'
+	from chairs.rb:11:in `run'
+	from chairs.rb:28:in `<main>'
+Macintosh-2:musical_chairs lianeallen$ ruby chairs.rb
+Macintosh-2:musical_chairs lianeallen$ ruby chairs.rb
+Macintosh-2:musical_chairs lianeallen$ vim chairs.out
+Macintosh-2:musical_chairs lianeallen$ cd ../..
+Macintosh-2:metis lianeallen$ postgres sql
+-bash: postgres: command not found
+Macintosh-2:metis lianeallen$ brew -v
+Homebrew 0.9.3
+Macintosh-2:metis lianeallen$ postgres -v
+-bash: postgres: command not found
+Macintosh-2:metis lianeallen$ which psql
+/usr/bin/psql
+Macintosh-2:metis lianeallen$ install postgresql
+usage: install [-bCcpSsv] [-B suffix] [-f flags] [-g group] [-m mode]
+               [-o owner] file1 file2
+       install [-bCcpSsv] [-B suffix] [-f flags] [-g group] [-m mode]
+               [-o owner] file1 ... fileN directory
+       install -d [-v] [-g group] [-m mode] [-o owner] directory ...
+Macintosh-2:metis lianeallen$ info postgresql
+Macintosh-2:metis lianeallen$ uit
+-bash: uit: command not found
+Macintosh-2:metis lianeallen$ :quit
+-bash: :quit: command not found
+Macintosh-2:metis lianeallen$ clear
+
+Macintosh-2:metis lianeallen$  which -s psql
+Macintosh-2:metis lianeallen$ psql
+psql: could not connect to server: Permission denied
+	Is the server running locally and accepting
+	connections on Unix domain socket "/var/pgsql_socket/.s.PGSQL.5432"?
+Macintosh-2:metis lianeallen$ brew info postgresql
+postgresql: stable 9.2.2
+http://www.postgresql.org/
+Depends on: readline, ossp-uuid
+Conflicts with: postgres-xc
+Not installed
+https://github.com/mxcl/homebrew/commits/master/Library/Formula/postgresql.rb
+==> Options
+--32-bit
+	Build 32-bit only
+--enable-dtrace
+	Build with DTrace support
+--no-perl
+	Build without Perl support
+--no-python
+	Build without Python support
+--without-ossp-uuid
+	Build without OSSP uuid
+==> Caveats
+# Build Notes
+
+If builds of PostgreSQL 9 are failing and you have version 8.x installed,
+you may need to remove the previous version first. See:
+  https://github.com/mxcl/homebrew/issues/issue/2510
+
+To build plpython against a specific Python, set PYTHON prior to brewing:
+  PYTHON=/usr/local/bin/python  brew install postgresql
+See:
+  http://www.postgresql.org/docs/9.2/static/install-procedure.html
+
+# Create/Upgrade a Database
+
+If this is your first install, create a database with:
+  initdb /usr/local/var/postgres -E utf8
+
+To migrate existing data from a previous major version (pre-9.2) of PostgreSQL, see:
+  http://www.postgresql.org/docs/9.2/static/upgrading.html
+
+# Loading Extensions
+
+By default, Homebrew builds all available Contrib extensions.  To see a list of all
+available extensions, from the psql command line, run:
+  SELECT * FROM pg_available_extensions;
+
+To load any of the extension names, navigate to the desired database and run:
+  CREATE EXTENSION [extension name];
+
+For instance, to load the tablefunc extension in the current database, run:
+  CREATE EXTENSION tablefunc;
+
+For more information on the CREATE EXTENSION command, see:
+  http://www.postgresql.org/docs/9.2/static/sql-createextension.html
+For more information on extensions, see:
+  http://www.postgresql.org/docs/9.2/static/contrib.html
+
+# Other
+
+Some machines may require provisioning of shared memory:
+  http://www.postgresql.org/docs/9.2/static/kernel-resources.html#SYSVIPC
+
+To install postgresql (and ossp-uuid) in 32-bit mode:
+   brew install postgresql --32-bit
+
+If you want to install the postgres gem, including ARCHFLAGS is recommended:
+    env ARCHFLAGS="-arch x86_64" gem install pg
+
+To install gems without sudo, see the Homebrew wiki.
+
+To have launchd start postgresql at login:
+    ln -sfv /usr/local/opt/postgresql/*.plist ~/Library/LaunchAgents
+Then to load postgresql now:
+    launchctl load ~/Library/LaunchAgents/homebrew.mxcl.postgresql.plist
+Or, if you don't want/need launchctl, you can just run:
+    pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start
+Macintosh-2:metis lianeallen$ ln -sfv /usr/local/opt/postgresql/*.plist ~/Library/LaunchAgents
+/Users/lianeallen/Library/LaunchAgents/*.plist -> /usr/local/opt/postgresql/*.plist
+Macintosh-2:metis lianeallen$ launchctl load ~/Library/LaunchAgents/homebrew.mxcl.postgresql.plist
+launchctl: Couldn't stat("/Users/lianeallen/Library/LaunchAgents/homebrew.mxcl.postgresql.plist"): No such file or directory
+nothing found to load
+Macintosh-2:metis lianeallen$ ls ~/Library/LaunchAgents/
+*.plist			com.liane.setmtu.plist	openlaunch.plist
+Macintosh-2:metis lianeallen$ brew uninstall postgresql
+Error: No such keg: /usr/local/Cellar/postgresql
+Macintosh-2:metis lianeallen$ brew install postgresql
+Warning: Your Xcode (3.2.6) is outdated
+Please install Xcode 4.5.2.
+==> Installing postgresql dependency: readline
+==> Downloading http://ftpmirror.gnu.org/readline/readline-6.2.tar.gz
+######################################################################## 100.0%
+==> Patching
+patching file callback.c
+patching file input.c
+patching file patchlevel
+patching file support/shobj-conf
+patching file vi_mode.c
+==> ./configure --prefix=/usr/local/Cellar/readline/6.2.4 --mandir=/usr/local/Cellar/readlin
+checking for gcc... /Developer/usr/bin/gcc-4.2
+checking for C compiler default output file name... 
+configure: error: in `/private/tmp/readline-aKCn/readline-6.2':
+configure: error: C compiler cannot create executables
+See `config.log' for more details.
+
+READ THIS: https://github.com/mxcl/homebrew/wiki/troubleshooting
+
+Macintosh-2:metis lianeallen$ psql
+psql: could not connect to server: Permission denied
+	Is the server running locally and accepting
+	connections on Unix domain socket "/var/pgsql_socket/.s.PGSQL.5432"?
+Macintosh-2:metis lianeallen$ vim ~/.bash
+.bash_history  .bash_profile  .bashrc        
+Macintosh-2:metis lianeallen$ vim ~/.bashrc 
+Macintosh-2:metis lianeallen$ 
+Last login: Mon Jun  9 11:29:28 on console
+-bash: cd: ./Documents/WebDevandWork/code/metis/metis-class: No such file or directory
+Macintosh-2:metis lianeallen$ psql
+psql: could not connect to server: Permission denied
+	Is the server running locally and accepting
+	connections on Unix domain socket "/var/pgsql_socket/.s.PGSQL.5432"?
+Macintosh-2:metis lianeallen$ source ~/.bashrc
+~/Documents/WebDevandWork/code/metis $ psql
+psql (9.3.4)
+Type "help" for help.
+
+lianeallen=# \q
+~/Documents/WebDevandWork/code/metis $ vim ~/.bashrc 
+~/Documents/WebDevandWork/code/metis $ psql
+psql (9.3.4)
+Type "help" for help.
+
+lianeallen=# \q
+~/Documents/WebDevandWork/code/metis $ cd metis-class
+~/Documents/WebDevandWork/code/metis/metis-class(master) $ ls 
+Gallery			flash_cards		mud_minder
+README.md		guessing_game		music_problem
+Week2			hangman			musical_chairs
+Zombies			locker_challenge	my_hash.rb
+age_sort		lottery
+~/Documents/WebDevandWork/code/metis/metis-class(master) $ cd Week2
+~/Documents/WebDevandWork/code/metis/metis-class/Week2(master) $ ls
+sql_problem_1
+~/Documents/WebDevandWork/code/metis/metis-class/Week2(master) $ cd aql_problem_1
+-bash: cd: aql_problem_1: No such file or directory
+~/Documents/WebDevandWork/code/metis/metis-class/Week2(master) $ cd sql_problem_1
+~/Documents/WebDevandWork/code/metis/metis-class/Week2/sql_problem_1(master) $ createdb photo_gallery
+~/Documents/WebDevandWork/code/metis/metis-class/Week2/sql_problem_1(master) $ ls -a
+.			..			sql_problems_1.md
+~/Documents/WebDevandWork/code/metis/metis-class/Week2/sql_problem_1(master) $ createdb photo_gallery
+createdb: database creation failed: ERROR:  database "photo_gallery" already exists
+~/Documents/WebDevandWork/code/metis/metis-class/Week2/sql_problem_1(master) $ rm photo_gallery
+rm: photo_gallery: No such file or directory
+~/Documents/WebDevandWork/code/metis/metis-class/Week2/sql_problem_1(master) $ cd .
+~/Documents/WebDevandWork/code/metis/metis-class/Week2/sql_problem_1(master) $ cd ..
+~/Documents/WebDevandWork/code/metis/metis-class/Week2(master) $ mkdir
+usage: mkdir [-pv] [-m mode] directory ...
+~/Documents/WebDevandWork/code/metis/metis-class/Week2(master) $ ls
+sql_problem_1
+~/Documents/WebDevandWork/code/metis/metis-class/Week2(master) $ mkdir gallery_program
+~/Documents/WebDevandWork/code/metis/metis-class/Week2(master) $ cd gallery_program
+~/Documents/WebDevandWork/code/metis/metis-class/Week2/gallery_program(master) $ ls 
+~/Documents/WebDevandWork/code/metis/metis-class/Week2/gallery_program(master) $ createdb photo_gallery
+createdb: database creation failed: ERROR:  database "photo_gallery" already exists
+~/Documents/WebDevandWork/code/metis/metis-class/Week2/gallery_program(master) $ createdb photo_gallery2
+~/Documents/WebDevandWork/code/metis/metis-class/Week2/gallery_program(master) $ ls 
+photo_gallery.sql
+~/Documents/WebDevandWork/code/metis/metis-class/Week2/gallery_program(master) $ dropdb "photo_gallery"
+~/Documents/WebDevandWork/code/metis/metis-class/Week2/gallery_program(master) $ dropdb "photogallery2
+> 
+> "
+dropdb: database removal failed: ERROR:  database "photogallery2
+" does not exist
+~/Documents/WebDevandWork/code/metis/metis-class/Week2/gallery_program(master) $ dropdb "photogallery2""
+> "
+dropdb: database removal failed: ERROR:  database "photogallery2
+~/Documents/WebDevandWork/code/metis/metis-class/Week2/gallery_program(master) $ dropdb "photogallery2"
+dropdb: database removal failed: ERROR:  database "photogallery2" does not exist
+~/Documents/WebDevandWork/code/metis/metis-class/Week2/gallery_program(master) $ createdb photo_gallery
+~/Documents/WebDevandWork/code/metis/metis-class/Week2/gallery_program(master) $ dropdb "photo_gallery2"
+~/Documents/WebDevandWork/code/metis/metis-class/Week2/gallery_program(master) $ ls
+photo_gallery.sql
+~/Documents/WebDevandWork/code/metis/metis-class/Week2/gallery_program(master) $ clear
+
+~/Documents/WebDevandWork/code/metis/metis-class/Week2/gallery_program(master) $ ls
+photo_gallery.sql
+~/Documents/WebDevandWork/code/metis/metis-class/Week2/gallery_program(master) $ psql < photo_gallery.sql
+SET
+SET
+SET
+SET
+SET
+CREATE EXTENSION
+COMMENT
+SET
+SET
+SET
+CREATE TABLE
+CREATE SEQUENCE
+ALTER SEQUENCE
+CREATE TABLE
+CREATE SEQUENCE
+ALTER SEQUENCE
+CREATE SEQUENCE
+ALTER SEQUENCE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ setval 
+--------
+      3
+(1 row)
+
+ setval 
+--------
+      1
+(1 row)
+
+ setval 
+--------
+     18
+(1 row)
+
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+REVOKE
+GRANT
+~/Documents/WebDevandWork/code/metis/metis-class/Week2/gallery_program(master) $ psql photo_gallery
+psql (9.3.4)
+Type "help" for help.
+
+photo_gallery=# /d
+photo_gallery-# psql photo_gallery < photo_gallery.sql
+photo_gallery-# /q
+photo_gallery-# :quit
+photo_gallery-# 
+photo_gallery=# 
+[1]+  Stopped                 psql photo_gallery
+~/Documents/WebDevandWork/code/metis/metis-class/Week2/gallery_program(master) $ psql photo_gallery < photo_gallery.sql
+SET
+SET
+SET
+SET
+SET
+CREATE EXTENSION
+COMMENT
+SET
+SET
+SET
+CREATE TABLE
+CREATE SEQUENCE
+ALTER SEQUENCE
+CREATE TABLE
+CREATE SEQUENCE
+ALTER SEQUENCE
+CREATE SEQUENCE
+ALTER SEQUENCE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ setval 
+--------
+      3
+(1 row)
+
+ setval 
+--------
+      1
+(1 row)
+
+ setval 
+--------
+     18
+(1 row)
+
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+REVOKE
+GRANT
+~/Documents/WebDevandWork/code/metis/metis-class/Week2/gallery_program(master) $ psql photo_gallery
+psql (9.3.4)
+Type "help" for help.
+
+photo_gallery=# /d
+photo_gallery-# \d
+                   List of relations
+ Schema |         Name          |   Type   |   Owner    
+--------+-----------------------+----------+------------
+ public | galleries             | table    | lianeallen
+ public | galleries_id_seq      | sequence | lianeallen
+ public | images                | table    | lianeallen
+ public | images_gallery_id_seq | sequence | lianeallen
+ public | images_id_seq         | sequence | lianeallen
+(5 rows)
+

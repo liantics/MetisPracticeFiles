@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<!-- A cat gallery -->
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Cat Pics</title>
+    <link rel="stylesheet" href="application.css">
+
+
+  </head>
+  <body>
+  	<h1>Cats</h1>
+    <div>
+      <!-- This makes it so you don't have to write out each image URL -->
+    <% cat_images.each do |cat_image| %>
+      <img src="img/<%= cat_images %>" alt="<%= cat_images %>">
+    <% end %>
+<!--
+  The code before rewriting it to look like the above ^
+		<img src="img/grumpy_cat.png">
+    <img src="img/colonel_meow.jpg">
+-->
+  </div>
+  </body>
+</html>
+
+
+<!-- loop over every cat image -->
+<!-- #<img src="img/#{cat_image_name}.png alt= "#{cat_image_name}">" -->
+

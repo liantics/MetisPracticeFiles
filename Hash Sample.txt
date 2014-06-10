@@ -1,0 +1,18 @@
+
+# sample hash, made by hand
+# music_database = {
+# 	{"Taylor Swift"} => ["Sad", "Loney", "Single"],
+# 	{"James Taylor"} => ["Also Pretty Sad", "Crazy?"],
+#   {"Kanye" => ["Angry"] }
+# hash rocket in the curly brackets when creating a new hash. Do NOT use the hash rocket when setting the value
+#need commas after every pair in the hash, except the last.
+
+# a hash with symbols as keys
+## music_database = {
+# 	:Taylor Swift => ["Sad", "Loney", "Single"],
+# 	:James Taylor => ["Also Pretty Sad", "Crazy?"],
+#   :Kanye => ["Angry"] 
+# }
+
+# Typically, the kind of content within a hash will be uniform = each key value pair will have 
+# the same data types, making it easier to code to make use of the content.

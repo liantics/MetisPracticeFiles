@@ -1,0 +1,32 @@
+Metis Notes 6-6-2014
+
+Speaker: Ben (@r00k on twitter), runs learn.thoughtbot.com
+
+
+What did I wish I know when I started
+
+- don't panic
+- watch out for your thoughts: it's not you, this stuff is hard.
+
+Imagine you're pulling someone over to explain to them what you're trying to do. "Rubber ducking"
+
+Hammock driven development
+
+Getting Hired
+- google your name
+BLOG the heck out of your experience in Metis, tweet it, tuumblr it, etc. 
+- include the cool things you've learned, problems solved
+
+Get at least 3 ruby friends outside this group. Join Boston Ruby Group. A useful means of building your network. Be a little selfish - WASTE people's time. Everyone has been in the situation we're in right now. You can pay it back later. "What are you working on? Can I watch?" Ask questions. Go early, hang around the food. Have no shame. 
+
+Use the docs all the time
+
+Dash = documentation viewer app. Can download the standard library documentation
+
+twitter is the best way to keep connected with coders. Tweet to people!
+Ben (speaker from learn.thoughtbot.com) @r00k
+Josh (teacher Metis) @josh_steiner
+Gabe (teacher Metis) @gabebw
+
+------
+An instance is a specific object.

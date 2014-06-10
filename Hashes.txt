@@ -1,0 +1,57 @@
+make hash
+students = {}
+
+Add a key, with its value
+students["fridge"] = "delicious"
+
+students["lemonade"] = "tasty"
+
+View the keys
+puts students.keys
+=> ["fridge", "lemonade"]
+
+View the values:
+
+puts students
+=> ["fridge", "lemonade"]
+
+students["lemonade"] = "not tasty"
+
+puts students["lemonade"]
+
+=> not tasty
+
+
+-----------------------------
+students["drinks"] = []
+students["drinks"] << "coke"
+students["drinks"] << "lemonade"
+students["drinks"] << "milk"
+
+puts students["drinks"]
+coke
+lemonade
+milk
+
+----------------------
+Set x to something if it hasn't already been set
+x = x || y
+
+If x is false, sets x = to y, otherwise leaves it as the current value.
+
+
+---------
+
+music database is a hash
+Each value in the hash is an array of strings
+puts @music_database.class
+would put an array
+
+hash.class 
+hash
+
+hash["taylor swift"].class
+array
+
+------------------
+

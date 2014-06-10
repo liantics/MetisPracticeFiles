@@ -1,0 +1,130 @@
+What is a web server? 
+It's a computer on the internet that stores web page information and responds to requests for that information.
+
+Protocol
+ - an agreed upon set of rules for communication between servers.
+
+ Domain name:
+ google.com
+
+ Subdomain:
+ blerg.google.com
+
+Why use query parameters instead of a path?
+When the path would change for each user, it makes more sense to send a query
+
+so, instead of
+
+http://www.google.com/search/lang/eng/q/hello
+
+use
+
+http://www.google.com/search?lang=english&q=hello
+
+and let the server do the work of figuring out what to serve, instead of expecting the user to know what they need served
+
+Hashes in query strings:
+http://www.youtube.com/watch?feature=player_detailpage&v=LIaYDPRedWQ#t=21
+
+#t=21 is a hash
+
+The hash is only observable by the web page. It's not part of the request, so the server ignores it. 
+It's passed back, unprocessed, to the web page. Something on the page may do something with it. 
+
+
+Request-Response lifecycle
+You make a request, the server receives it, does its job, then responds with a result
+
+A request has the format:
+verb + path + data
+
+Verbs are:
+GET (the default verb used by web browsers)
+POST
+PUT
+PATCH
+DELETE
+
+Path is:
+what it sounds like, the url path
+
+Data
+
+On the web, you are ACCESSING A RESOURCE at a path. There is NO mapping between the file system and what you see in the URL. 
+
+so when you send google.com/search?hello kitty, you are sending a GET verb, accessing the Search resource, with a hello kitty parameter.
+
+-----------------
+
+Requests:
+
+GET /data
+GET accesses the Search resource, with a hello kitty parameter. 
+There is a size limit on what can be included in a query parameter via a GET request.
+Does NOT create a new thing on the server, asks for something that already exists.
+Success response is usually 200
+
+POST /upload_file or /new_user
+The POST verb expects post data, and has no limit on upload data size.
+Creates a new thing on the server.
+Uploading a file or filling out and submitting a form.
+If the resource already exists, it will throw an error.
+
+PATCH /existing_user
+Updates an existing resource, has no limit on upload data size.
+
+PUT
+Combination of post and patch, has no limit on upload data size.
+If the resource doesn't already exist on the server, it tells the server to create a new one.
+If the resource DOES exist, it updates it. 
+Not used much in rails.
+
+DELETE 
+Removes the resource.
+
+-----------------
+
+Responses:
+
+Status Code
+ - numbers
+
+ 1xx informational
+ 2xx success
+ 3xx redirection
+ 4xx client error
+ 5xx server error
+
+	Memorize these:
+	200 OK - Success (response to GET)
+	201 Created - Success (response to POST)
+
+	301 page has moved permanently (you set up you server to redirect users)
+	404 not found
+
+Body
+giant string of html
+
+Homework
+Sketch of Mud Minder app
+Create low fidelity sketches and an ERD (page 14) of your application. 
+Due next Monday.
+Balsamiq
+
+
+------------------
+
+GEMS
+
+Sinatra is a DSL for quickly creating web applications in ruby with minimal effort.
+It responds to http requests easily. 
+
+makes you be very explicity about the requests it responds to and the responses it will give
+
+
+
+
+
+
+
+

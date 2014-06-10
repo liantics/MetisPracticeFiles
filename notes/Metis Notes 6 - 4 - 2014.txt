@@ -1,0 +1,137 @@
+Metis Notes 6 - 4 - 2014
+
+To find out if a number can be divided by another number, use modulo. 
+That returns the remainder
+
+0 mod 3 = 3
+3 mod 0 = divide by zero error
+6 mode 3 = 0
+7 mode 3 = 1
+8 mode 3 = 2
+
+8 % 3 = 2
+9 % 3 = 0
+7 % 3 = 1
+
+----
+
+modulo 
+
+FizzBuzz
+
+print the numbers from one to 100
+
+for any number divisible by 3, print fizz
+divisible by 5 print buzz
+divisible by both, print fiz buzz 
+
+
+-------------
+5.times do
+
+in this example, 5 is an instance of the fixnum class
+times is a method in the fixnum class
+
+Inside a class, you can refer to the instance of the class with "self"
+
+if we were to implement our own, it would be a loop, starting at zero:
+
+
+
+
+
+
+
+
+
+
+
+def times
+ i = 0
+ while i < self do
+  action
+ end
+
+5.times do
+ puts "wombat"
+end
+
+
+We need to be able to pass the code from the 5.times into our times method
+
+So we need a 'block"
+
+argument is passed into the method using &block
+
+so:
+
+def times(&block)
+ i = 0
+ while i < self do
+  block.call
+ end
+
+An example of 2 arguments being passed, the second one of which is a block:
+
+1.upto(10) do
+	puts "Hi"
+end
+
+class Fixnum
+	def upto(limit, &block)
+		i = self
+		while i < limit
+		 block.call
+		i += 1
+		end
+	end
+end
+
+** upto in the background looks like
+
+1.upto(10) |n|
+as a result, in order to change the 'n" in the upto block, we need to pass something back. Here's ow:
+
+class Fixnum
+	def upto(limit, &block)
+		i = self
+		while i < limit
+		 block.call(i) #<---- pushes back the value of i
+		i += 1
+		end
+	end
+end
+
+
+
+---------
+-------
+
+Streamlined way to pass around blocks - instead of block.call, use the keyword "yield"
+
+----------
+Imagine a school that has 100 closed lockers and 100 students standing in line. The 1st student goes through and opens every locker, the 2nd student closes every 2nd locker, and the 3rd student toggles every 3rd locker. If the remaining students go through, likewise, and toggle the state of any locker that is a multiple of their number in line, what lockers are open at the end?
+
+Print locker numbers from 1-100, as well as its final state ("open" or "closed"). For example:
+
+  1. open
+  2. closed
+  3. closed
+  ...
+
+lockers = [false] * 100
+locker = true
+locker = !locker
+
+-------------
+Inputing and outputting information
+
+stdout 
+
+puts and print both use "standard out"
+
+stdin
+
+gets uses "standard in"
+
+We can get info in and out in another way: files

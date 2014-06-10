@@ -1,0 +1,220 @@
+Last login: Mon Jun  9 12:14:26 on ttys003
+~/Documents/WebDevandWork/code/metis/metis-class(master) $ ls
+README.md	Week1		Week2		my_hash.rb	passion_project
+~/Documents/WebDevandWork/code/metis/metis-class(master) $ cd Week2
+~/Documents/WebDevandWork/code/metis/metis-class/Week2(master) $ ls
+Zombies		gallery_program
+~/Documents/WebDevandWork/code/metis/metis-class/Week2(master) $ cd gallery_program
+~/Documents/WebDevandWork/code/metis/metis-class/Week2/gallery_program(master) $ ls
+photo_gallery.sql
+~/Documents/WebDevandWork/code/metis/metis-class/Week2/gallery_program(master) $ postgres
+postgres does not know where to find the server configuration file.
+You must specify the --config-file or -D invocation option or set the PGDATA environment variable.
+~/Documents/WebDevandWork/code/metis/metis-class/Week2/gallery_program(master) $ postgres \d
+postgres: invalid argument: "d"
+Try "postgres --help" for more information.
+~/Documents/WebDevandWork/code/metis/metis-class/Week2/gallery_program(master) $ psql
+psql (9.3.4)
+Type "help" for help.
+
+lianeallen=# \d
+                   List of relations
+ Schema |         Name          |   Type   |   Owner    
+--------+-----------------------+----------+------------
+ public | galleries             | table    | lianeallen
+ public | galleries_id_seq      | sequence | lianeallen
+ public | images                | table    | lianeallen
+ public | images_gallery_id_seq | sequence | lianeallen
+ public | images_id_seq         | sequence | lianeallen
+(5 rows)
+
+lianeallen=# SELECT * images
+lianeallen-# SELECT * from images
+lianeallen-# SELECT id, name FROM images WHERE gallery_id = 1 ORDER by name
+lianeallen-# ;
+ERROR:  syntax error at or near "images"
+LINE 1: SELECT * images
+                 ^
+lianeallen=# SELECT id, name FROM images WHERE gallery_id = 1 ORDER by name;
+ id |          name          
+----+------------------------
+  4 | Colonel Meow
+  5 | Gorbypuff Thunderhorse
+  1 | Grumpy Cat
+ 12 | Lolcat
+  8 | Pirate Cat
+(5 rows)
+
+lianeallen=# SELECT id, name FROM images WHERE gallery_id = 1 LIMIT 1
+lianeallen-# ;
+ id |    name    
+----+------------
+  1 | Grumpy Cat
+(1 row)
+
+lianeallen=# SELECT id, name FROM images WHERE gallery_id = 1 LIMIT 2;
+ id |     name     
+----+--------------
+  1 | Grumpy Cat
+  4 | Colonel Meow
+(2 rows)
+
+lianeallen=# SELECT id, name FROM images WHERE gallery_id = 1 OR gallery_id = 2; 
+ id |          name          
+----+------------------------
+  2 | Doge
+  6 | Science Dog
+ 16 | Space
+  1 | Grumpy Cat
+  4 | Colonel Meow
+ 11 | Puppy
+  8 | Pirate Cat
+ 12 | Lolcat
+  5 | Gorbypuff Thunderhorse
+(9 rows)
+
+lianeallen=# SELECT * FROM images WHERE gallery_id IN (1,2);
+ id | gallery_id |          name          |      description       |                                                              url                                                              | likes 
+----+------------+------------------------+------------------------+-------------------------------------------------------------------------------------------------------------------------------+-------
+  2 |          2 | Doge                   | So Doge                | http://noodlytime.com/postimages/sql-doge.png                                                                                 |     1
+  6 |          2 | Science Dog            | More science           | http://www.personal.psu.edu/afr3/blogs/siowfa13/Science-dog.jpg                                                               |     1
+ 16 |          2 | Space                  | Not a tribble          | http://images2.fanpop.com/images/photos/6300000/-Space-Dog-The-Enemy-Within-star-trek-the-original-series-6352214-694-530.jpg |     1
+  1 |          1 | Grumpy Cat             | He is grumpy           | http://www.catster.com/files/original.jpg                                                                                     |     3
+  4 |          1 | Colonel Meow           | Not happy              | http://www.siliconrepublic.com/fs/img/rip%20colonel%20meow%20oatmeal.png                                                      |     3
+ 11 |          2 | Puppy                  |                        | http://media-cache-ec0.pinimg.com/736x/54/09/57/540957445cc801dc8dacea03e67a86f9.jpg       : id | gallery_id |          name          |      description       |                                                              url                                                              | likes 
+----+------------+------------------------+------------------------+-------------------------------------------------------------------------------------------------------------------------------+-------
+  2 |          2 | Doge                   | So Doge                | http://noodlytime.com/postimages/sql-doge.png                                                                                 |     1
+  6 |          2 | Science Dog            | More science           | http://www.personal.psu.edu/afr3/blogs/siowfa13/Science-dog.jpg                                                               |     1
+ 16 |          2 | Space                  | Not a tribble          | http://images2.fanpop.com/images/photos/6300000/-Space-Dog-The-Enemy-Within-star-trek-the-original-series-6352214-694-530.jpg |     1
+  1 |          1 | Grumpy Cat             | He is grumpy           | http://www.catster.com/files/original.jpg                                                                                     |     3
+  4 |          1 | Colonel Meow           | Not happy              | http://www.siliconrepublic.com/fs/img/rip%20colonel%20meow%20oatmeal.png                                                      |     3
+ 11 |          2 | Puppy                  |                        | http://media-cache-ec0.pinimg.com/736x/54/09/57/540957445cc801dc8dacea03e67a86f9.jpg               : id | gallery_id |          name          |      description       |                                                              url                                                              | likes 
+----+------------+------------------------+------------------------+-------------------------------------------------------------------------------------------------------------------------------+-------
+  2 |          2 | Doge                   | So Doge                | http://noodlytime.com/postimages/sql-doge.png                                                                                 |     1
+  6 |          2 | Science Dog            | More science           | http://www.personal.psu.edu/afr3/blogs/siowfa13/Science-dog.jpg                                                               |     1
+ 16 |          2 | Space                  | Not a tribble          | http://images2.fanpop.com/images/photos/6300000/-Space-Dog-The-Enemy-Within-star-trek-the-original-series-6352214-694-530.jpg |     1
+  1 |          1 | Grumpy Cat             | He is grumpy           | http://www.catster.com/files/original.jpg                                                                                     |     3
+  4 |          1 | Colonel Meow           | Not happy              | http://www.siliconrepublic.com/fs/img/rip%20colonel%20meow%20oatmeal.png                                                      |     3
+ 11 |          2 | Puppy                  |                        | http://media-cache-ec0.pinimg.com/736x/54/09/57/540957445cc801dc8dacea03e67a86f9.jpg                   : id | gallery_id |          name          |      description       |                                                              url                                                              | likes 
+----+------------+------------------------+------------------------+-------------------------------------------------------------------------------------------------------------------------------+-------
+  2 |          2 | Doge                   | So Doge                | http://noodlytime.com/postimages/sql-doge.png                                                                                 |     1
+  6 |          2 | Science Dog            | More science           | http://www.personal.psu.edu/afr3/blogs/siowfa13/Science-dog.jpg                                                               |     1
+ 16 |          2 | Space                  | Not a tribble          | http://images2.fanpop.com/images/photos/6300000/-Space-Dog-The-Enemy-Within-star-trek-the-original-series-6352214-694-530.jpg |     1
+  1 |          1 | Grumpy Cat             | He is grumpy           | http://www.catster.com/files/original.jpg                                                                                     |     3
+  4 |          1 | Colonel Meow           | Not happy              | http://www.siliconrepublic.com/fs/img/rip%20colonel%20meow%20oatmeal.png                                                      |     3
+ 11 |          2 | Puppy                  |                        | http://media-cache-ec0.pinimg.com/736x/54/09/57/540957445cc801dc8dacea03e67a86f9.jpg                             : id | gallery_id |          name          |      description       |                                                              url                                                              | likes 
+----+------------+------------------------+------------------------+-------------------------------------------------------------------------------------------------------------------------------+-------
+  2 |          2 | Doge                   | So Doge                | http://noodlytime.com/postimages/sql-doge.png                                                                                 |     1
+  6 |          2 | Science Dog            | More science           | http://www.personal.psu.edu/afr3/blogs/siowfa13/Science-dog.jpg                                                               |     1
+ 16 |          2 | Space                  | Not a tribble          | http://images2.fanpop.com/images/photos/6300000/-Space-Dog-The-Enemy-Within-star-trek-the-original-series-6352214-694-530.jpg |     1
+           1 | Grumpy Cat             | He is grumpy           | http://www.catster.com/files/original.jpg                                                                                     |     3
+  4 |          1 | Colonel Meow           | Not happy              | http://www.siliconrepublic.com/fs/img/rip%20colonel%20meow%20oatmeal.png                                                      |     3
+ 11 |          2 | Puppy                  |                        | http://media-cache-ec0: id | gallery_id |          name          |      description       |                                                              url                                                              | likes 
+----+------------+------------------------+------------------------+-------------------------------------------------------------------------------------------------------------------------------+-------
+  2 |          2 | Doge                   | So Doge                | http://noodlytime.com/postimages/sql-doge.png                                                                                 |     1
+  6 |          2 | Science Dog            | More science           | http://www.personal.psu.edu/afr3/blogs/siowfa13/Science-dog.jpg                                                               |     1
+ 16 |          2 | Space                  | Not a tribble          | http://images2.fanpop.com/images/photos/6300000/-Space-Dog-The-Enemy-Within-star-trek-the-original-series-6352214-694-530.jpg |     1
+  1 |          1 | Grumpy Cat             | He is grumpy           | http://www.catster.com/files/original.jpg                                                                                     |     3
+  4 |          1 | Colonel Meow           | Not happy              | http://www.siliconrepublic.com/fs/img/rip%20colonel%20meow%20oatmeal.png                                                      |     3
+ 11 |          2 | Puppy                  |                        | http://media-cache-ec0.p: id | gallery_id |          name          |      description       |                                                              url                                                              | likes 
+----+------------+------------------------+------------------------+-------------------------------------------------------------------------------------------------------------------------------+-------
+  2 |          2 | Doge                   | So Doge                | http://noodlytime.com/postimages/sql-doge.png                                                                                 |     1
+  6 |          2 | Science Dog            | More science           | http://www.personal.psu.edu/afr3/blogs/siowfa13/Science-dog.jpg                                                               |     1
+ 16 |          2 | Space                  | Not a tribble          | http://images2.fanpop.com/images/photos/6300000/-Space-Dog-The-Enemy-Within-star-trek-the-original-series-6352214-694-530.jpg |     1
+  1 |          1 | Grumpy Cat             | He is grumpy           | http://www.catster.com/files/original.jpg                                                                                     |     3
+  4 |          1 | Colonel Meow           | Not happy              | http://www.siliconrepublic.com/fs/img/rip%20colonel%20meow%20oatmeal.png                                                      |     3
+ 11 |          2 | Puppy                  |                        | http://media-cache-ec0.pinimg.com/736x/54/09/57/540957445cc801dc8dacea03e67a86f9.jpg                                          |     1
+  8 |          1 | Pirate Cat             | Yarrrrrr               | http://www.pleated-jeans.com/wp-content/uploads/2012/12/3scuez.jpeg                                                           |     3
+ 12 |          1 | Lolcat                 | I can has cheesburger? | https://i.chzbgr.com/maxW500/875511040/h8EB4D6E9/                                                                             |     3
+  5 |          1 | Gorbypuff Thunderhorse | Also not happy         | https://pbs.twimg.com/media/As-uJgqCMAI0huB.jpg                                                                               |     6
+: id | gallery_id |          name          |      description       |                                                              url                                                              | likes 
+----+------------+------------------------+------------------------+-------------------------------------------------------------------------------------------------------------------------------+-------
+  2 |          2 | Doge                   | So Doge                | http://noodlytime.com/postimages/sql-doge.png                                                                                 |     1
+  6 |          2 | Science Dog            | More science           | http://www.personal.psu.edu/afr3/blogs/siowfa13/Science-dog.jpg                                                               |     1
+ 16 |          2 | Space                  | Not a tribble          | http://images2.fanpop.com/images/photos/6300000/-Space-Dog-The-Enemy-Within-star-trek-the-original-series-6352214-694-530.jpg |     1
+  1 |          1 | Grumpy Cat             | He is grumpy           | http://www.catster.com/files/original.jpg                                                                                     |     3
+  4 |          1 | Colonel Meow           | Not happy              | http://www.siliconrepublic.com/fs/img/rip%20colonel%20meow%20oatmeal.png                                                      |     3
+ 11 |          2 | Puppy                  |                        | http://media-cache-ec0.pinimg.com/736x/54/09/57/540957445cc801dc8dacea03e67a86f9.jpg                                          |     1
+  8 |          1 | Pirate Cat             | Yarrrrrr               | http://www.pleated-jeans.com/wp-content/uploads/2012/12/3scuez.jpeg                                                           |     3
+ 12 |          1 | Lolcat                 | I can has cheesburger? | https://i.chzbgr.com/maxW500/875511040/h8EB4D6E9/                                                                             |     3
+  5 |          1 | Gorbypuff Thunderhorse | Also not happy         | https://pbs.twimg.com/media/As-uJgqCMAI0huB.jpg                                                                               |     6
+: id | gallery_id |          name          |      description       |                                                              url                                                              | likes 
+----+------------+------------------------+------------------------+-------------------------------------------------------------------------------------------------------------------------------+-------
+  2 |          2 | Doge                   | So Doge                | http://noodlytime.com/postimages/sql-doge.png                                                                                 |     1
+  6 |          2 | Science Dog            | More science           | http://www.personal.psu.edu/afr3/blogs/siowfa13/Science-dog.jpg                                                               |     1
+ 16 |          2 | Space                  | Not a tribble          | http://images2.fanpop.com/images/photos/6300000/-Space-Dog-The-Enemy-Within-star-trek-the-original-series-6352214-694-530.jpg |     1
+  1 |          1 | Grumpy Cat             | He is grumpy           | http://www.catster.com/files/original.jpg                                                                                     |     3
+  4 |          1 | Colonel Meow           | Not happy              | http://www.siliconrepublic.com/fs/img/rip%20colonel%20meow%20oatmeal.png                                                      |     3
+ 11 |          2 | Puppy                  |                        | http://media-cache-ec0.pinimg.com/736x/54/09/57/540957445cc801dc8dacea03e67a86f9.jpg                                          |     1
+  8 |          1 | Pirate Cat             | Yarrrrrr               | http://www.pleated-jeans.com/wp-content/uploads/2012/12/3scuez.jpeg                                                           |     3
+ 12 |          1 | Lolcat                 | I can has cheesburger? | https://i.chzbgr.com/maxW500/875511040/h8EB4D6E9/                                                                             |     3
+  5 |          1 | Gorbypuff Thunderhorse | Also not happy         | https://pbs.twimg.com/media/As-uJgqCMAI0huB.jpg                                                                               |     6
+: id | gallery_id |          name          |      description       |                                                              url                                                              | likes 
+----+------------+------------------------+------------------------+-------------------------------------------------------------------------------------------------------------------------------+-------
+  2 |          2 | Doge                   | So Doge                | http://noodlytime.com/postimages/sql-doge.png                                                                                 |     1
+  6 |          2 | Science Dog            | More science           | http://www.personal.psu.edu/afr3/blogs/siowfa13/Science-dog.jpg                                                               |     1
+ 16 |          2 | Space                  | Not a tribble          | http://images2.fanpop.com/images/photos/6300000/-Space-Dog-The-Enemy-Within-star-trek-the-original-series-6352214-694-530.jpg |     1
+  1 |          1 | Grumpy Cat             | He is grumpy           | http://www.catster.com/files/original.jpg                                                                                     |     3
+  4 |          1 | Colonel Meow           | Not happy              | http://www.siliconrepublic.com/fs/img/rip%20colonel%20meow%20oatmeal.png                                                      |     3
+ 11 |          2 | Puppy                  |                        | http://media-cache-ec0.pinimg.com/736x/54/09/57/540957445cc801dc8dacea03e67a86f9.jpg                                          |     1
+  8 |          1 | Pirate Cat             | Yarrrrrr               | http://www.pleated-jeans.com/wp-content/uploads/2012/12/3scuez.jpeg                                                           |     3
+ 12 |          1 | Lolcat                 | I can has cheesburger? | https://i.chzbgr.com/maxW500/875511040/h8EB4D6E9/                                                                             |     3
+  5 |          1 | Gorbypuff Thunderhorse | Also not happy         | https://pbs.twimg.com/media/As-uJgqCMAI0huB.jpg                                                                               |     6
+: id | gallery_id |          name          |      description       |                                                              url                                                              | likes 
+----+------------+------------------------+------------------------+-------------------------------------------------------------------------------------------------------------------------------+-------
+  2 |          2 | Doge                   | So Doge                | http://noodlytime.com/postimages/sql-doge.png                                                                                 |     1
+  6 |          2 | Science Dog            | More science           | http://www.personal.psu.edu/afr3/blogs/siowfa13/Science-dog.jpg                                                               |     1
+ 16 |          2 | Space                  | Not a tribble          | http://images2.fanpop.com/images/photos/6300000/-Space-Dog-The-Enemy-Within-star-trek-the-original-series-6352214-694-530.jpg |     1
+  1 |          1 | Grumpy Cat             | He is grumpy           | http://www.catster.com/files/original.jpg                                                                                     |     3
+  4 |          1 | Colonel Meow           | Not happy              | http://www.siliconrepublic.com/fs/img/rip%20colonel%20meow%20oatmeal.png                                                      |     3
+ 11 |          2 | Puppy                  |                        | http://media-cache-ec0.pinimg.com/736x/54/09/57/540957445cc801dc8dacea03e67a86f9.jpg                                          |     1
+  8 |          1 | Pirate Cat             | Yarrrrrr               | http://www.pleated-jeans.com/wp-content/uploads/2012/12/3scuez.jpeg                                                           |     3
+ 12 |          1 | Lolcat                 | I can has cheesburger? | https://i.chzbgr.com/maxW500/875511040/h8EB4D6E9/                                                                             |     3
+  5 |          1 | Gorbypuff Thunderhorse | Also not happy         | https://pbs.twimg.com/media/As-uJgqCMAI0huB.jpg                                                                               |     6
+: id | gallery_id |          name          |      description       |                                                              url                                                              | likes 
+----+------------+------------------------+------------------------+-------------------------------------------------------------------------------------------------------------------------------+-------
+  2 |          2 | Doge                   | So Doge                | http://noodlytime.com/postimages/sql-doge.png                                                                                 |     1
+  6 |          2 | Science Dog            | More science           | http://www.personal.psu.edu/afr3/blogs/siowfa13/Science-dog.jpg                                                               |     1
+ 16 |          2 | Space                  | Not a tribble          | http://images2.fanpop.com/images/photos/6300000/-Space-Dog-The-Enemy-Within-star-trek-the-original-series-6352214-694-530.jpg |     1
+  1 |          1 | Grumpy Cat             | He is grumpy           | http://www.catster.com/files/original.jpg                                                                                     |     3
+  4 |          1 | Colonel Meow           | Not happy              | http://www.siliconrepublic.com/fs/img/rip%20colonel%20meow%20oatmeal.png                                                      |     3
+ 11 |          2 | Puppy                  |                        | http://media-cache-ec0.pinimg.com/736x/54/09/57/540957445cc801dc8dacea03e67a86f9.jpg                                          |     1
+  8 |          1 | Pirate Cat             | Yarrrrrr               | http://www.pleated-jeans.com/wp-content/uploads/2012/12/3scuez.jpeg                                                           |     3
+ 12 |          1 | Lolcat                 | I can has cheesburger? | https://i.chzbgr.com/maxW500/875511040/h8EB4D6E9/                                                                             |     3
+  5 |          1 | Gorbypuff Thunderhorse | Also not happy         | https://pbs.twimg.com/media/As-uJgqCMAI0huB.jpg                                                                               |     6
+: id | gallery_id |          name          |      description       |                                                              url                                                              | likes 
+----+------------+------------------------+------------------------+-------------------------------------------------------------------------------------------------------------------------------+-------
+  2 |          2 | Doge                   | So Doge                | http://noodlytime.com/postimages/sql-doge.png                                                                                 |     1
+  6 |          2 | Science Dog            | More science           | http://www.personal.psu.edu/afr3/blogs/siowfa13/Science-dog.jpg                                                               |     1
+ 16 |          2 | Space                  | Not a tribble          | http://images2.fanpop.com/images/photos/6300000/-Space-Dog-The-Enemy-Within-star-trek-the-original-series-6352214-694-530.jpg |     1
+  1 |          1 | Grumpy Cat             | He is grumpy           | http://www.catster.com/files/original.jpg                                                                                     |     3
+  4 |          1 | Colonel Meow           | Not happy              | http://www.siliconrepublic.com/fs/img/rip%20colonel%20meow%20oatmeal.png                                                      |     3
+ 11 |          2 | Puppy                  |                        | http://media-cache-ec0.pinimg.com/736x/54/09/57/540957445cc801dc8dacea03e67a86f9.jpg                                          |     1
+  8 |          1 | Pirate Cat             | Yarrrrrr               | http://www.pleated-jeans.com/wp-content/uploads/2012/12/3scuez.jpeg                                                           |     3
+ 12 |          1 | Lolcat                 | I can has cheesburger? | https://i.chzbgr.com/maxW500/875511040/h8EB4D6E9/                                                                             |     3
+  5 |          1 | Gorbypuff Thunderhorse | Also not happy         | https://pbs.twimg.com/media/As-uJgqCMAI0huB.jpg                                                                               |     6
+: id | gallery_id |          name          |      description       |                                                              url                                                              | likes 
+----+------------+------------------------+------------------------+-------------------------------------------------------------------------------------------------------------------------------+-------
+  2 |          2 | Doge                   | So Doge                | http://noodlytime.com/postimages/sql-doge.png                                                                                 |     1
+  6 |          2 | Science Dog            | More science           | http://www.personal.psu.edu/afr3/blogs/siowfa13/Science-dog.jpg                                                               |     1
+ 16 |          2 | Space                  | Not a tribble          | http://images2.fanpop.com/images/photos/6300000/-Space-Dog-The-Enemy-Within-star-trek-the-original-series-6352214-694-530.jpg |     1
+  1 |          1 | Grumpy Cat             | He is grumpy           | http://www.catster.com/files/original.jpg                                                                                     |     3
+  4 |          1 | Colonel Meow           | Not happy              | http://www.siliconrepublic.com/fs/img/rip%20colonel%20meow%20oatmeal.png                                                      |     3
+ 11 |          2 | Puppy                  |                        | http://media-cache-ec0.pinimg.com/736x/54/09/57/540957445cc801dc8dacea03e67a86f9.jpg                                          |     1
+  8 |          1 | Pirate Cat             | Yarrrrrr               | http://www.pleated-jeans.com/wp-content/uploads/2012/12/3scuez.jpeg                                                           |     3
+ 12 |          1 | Lolcat                 | I can has cheesburger? | https://i.chzbgr.com/maxW500/875511040/h8EB4D6E9/                                                                             |     3
+  5 |          1 | Gorbypuff Thunderhorse | Also not happy         | https://pbs.twimg.com/media/As-uJgqCMAI0huB.jpg                                                                               |     6
+: id | gallery_id |          name          |      description       |                                                              url                                                              | likes 
+----+------------+------------------------+------------------------+-------------------------------------------------------------------------------------------------------------------------------+-------
+  2 |          2 | Doge                   | So Doge                | http://noodlytime.com/postimages/sql-doge.png                                                                                 |     1
+  6 |          2 | Science Dog            | More science           | http://www.personal.psu.edu/afr3/blogs/siowfa13/Science-dog.jpg                                                               |     1
+ 16 |          2 | Space                  | Not a tribble          | http://images2.fanpop.com/images/photos/6300000/-Space-Dog-The-Enemy-Within-star-trek-the-original-series-6352214-694-530.jpg |     1
+  1 |          1 | Grumpy Cat             | He is grumpy           | http://www.catster.com/files/original.jpg                                                                                     |     3
+  4 |          1 | Colonel Meow           | Not happy              | http://www.siliconrepublic.com/fs/img/rip%20colonel%20meow%20oatmeal.png                                                      |     3
+ 11 |          2 | Puppy                  |                        | http://media-cache-ec0.pinimg.com/736x/54/09/57/540957445cc801dc8dacea03e67a86f9.jpg                                          |     1
+  8 |          1 | Pirate Cat             | Yarrrrrr               | http://www.pleated-jeans.com/wp-content/uploads/2012/12/3scuez.jpeg                                                           |     3
+ 12 |          1 | Lolcat                 | I can has cheesburger? | https://i.chzbgr.com/maxW500/875511040/h8EB4D6E9/                                                                             |     3
+  5 |          1 | Gorbypuff Thunderhorse | Also not happy         | https://pbs.twimg.com/media/As-uJgqCMAI0huB.jpg                                                                               |     6
+(9 rows)
+
+lianeallen=# 

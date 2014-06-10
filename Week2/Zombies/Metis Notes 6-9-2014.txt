@@ -1,0 +1,85 @@
+Metis Notes 6-9-2014
+
+You can find out what classes a class inherits by calling "ancestors" on the class name
+
+Array map method.
+
+Will iterate over an array, pass each element in the array into a block, then return a new array in which each element is the result of the action of the block.
+
+@input.to_a.each_with_index do |line, index| #<------- .to_a puts it into an array, also returns index
+# NOTES: 
+#two ways to do the map on this:
+#students, chairs = line.split(" ").map { |element| element.to_i }
+#And
+#shortcut notation, for when there is ONE element, and ONE method being called
+# on that element:
+#students, chairs = line.split(" ").map(&:to_i)	
+#Shortcut works for ONE element, ONE method
+#If it's more complicated, it must be written out the long way
+
+Announcement:
+
+If you're making changes and NOTHING is happening - MAKE SURE you are editing the correct file!!!
+
+The challeneges are the kinds of things we'll see in interviews
+
+----------
+Moving on to Web Development
+Tomorrow, will cover templating
+Today: storing the data from our templates
+_________
+
+Storing our Data - our picture gallery app has:
+
+Object 1: Galleries
+Attributes: 
+- name
+
+
+Object 2: Images
+Attributes:
+- name
+- description
+- image_content
+
+--- 
+In our prework app, we had 2 galleries
+
+Gallery
+name
+-cats
+-dogs
+
+Images
+name
+
+------
+
+Note: may have to run the elephant postgres app in order for these to work:
+
+Starting postgres sql (postgresql), enter:
+
+psql 
+
+in terminal.
+
+Display a database when psql is running, enter: 
+
+\d
+
+in terminal
+
+----------
+SQL commands:
+
+SELECT specifies which attributes to get
+FROM tells you which table to get the attributes from
+WHERE specifies a filter
+
+
+----------------
+
+Combining two tables: do a JOIN on specific attribute from each table
+
+galleries
+see notebook

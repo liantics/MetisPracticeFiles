@@ -1,0 +1,30 @@
+compare two adjacent words in the array
+if one is larger than the other pop it into a variable, push it back into the end of the array
+
+pivot
+list 1 less
+list 2 greater
+
+
+compare incoming to current [l-1]
+If incoming is larger, array.push incoming
+If incoming is smaller, compare to [0]
+	If incoming is smaller array.insert[0, incoming]
+	else if incoming is larger than [0], compare to half way
+		[((l-1)/2).to_i]
+		if equal insert[(((l-1)/2)+1).to_i, incoming]
+		elsif larger, compare to 3/4 of way
+			[((l-1)*.75).to_i]
+
+		elsif smaller, compare to 1/4 way
+			[((l-1)*.25).to_i]
+
+
+elsif incoming is larger
+	push into array
+
+df rearrangge 
+
+-----------
+Natalie lisa travel clinic
+Nurses 4 - 6 weeks prior to trip, can call make an appointment 
