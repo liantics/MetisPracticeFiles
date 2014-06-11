@@ -1,0 +1,31 @@
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>My Web Gallery</title>
+
+ 		<link rel="stylesheet" href="application.css">
+
+  </head>
+  <body>
+  	<h1>A photo gallery application</h1>
+    <p class="greeting">HI!</p>
+  	<div id="introduction">A list of galleries containing images of animals.</div>
+		<div id="galleries">
+			<h2 class="greeting">Galleries</h2>
+<ul>
+      <% galleries.each do |gallery| %>
+        
+          <li><a href="/<%= gallery.downcase %>"> <%= gallery %></a></li>
+        
+      <% end %>
+</ul>
+       <!-- <div id="wombat">
+        <p>Wombats are fun</p>
+        <div id="box-model">
+          <p>Yes they are.</p>
+        </div> -->
+        <p>Hello</p>
+      </div>
+		</div>
+  </body>
+</html>

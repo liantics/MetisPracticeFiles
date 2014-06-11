@@ -1,23 +1,26 @@
 require "sinatra"
+require "active_record"
+require "pg"
 
-get "/:gallery_name" do
-	cat_images_in_pixtr_rb = ["colonel_meow.jpg", "grumpy_cat.png"] 
-	dog_images_in_pixtr_rb = ["dog.png"] 
-
-	gallery_name = params[:gallery_name] #sinatra sees the : in the get, creates a hash, used here
-	erb gallery_name.to_sym , locals: {cat_images: cat_images_in_pixtr.rb, dog_images: dog_images_in_pixtr_rb}
-	#to_sym converts a string to a symbol, calls the erb method on that symbol
-	# sinatra will create variables in your view with the names of keys in the hash that is, itself, a value from locals
+class Galleries < ActiveRecord::Base
 end
 
-# #sinatra can render files: take a file, read it, send it to the browser
-# 	get "/cats" do
-# 		erb :cats
-# 	end
+get "/" do
+	@galleries = Galleries.all
+	erb :index
+end
 
-# 	get "/dogs" do
-# 		erb :dogs
-# 	end
+get "/:gallery_name" do
 
-# 	get "/wombats" do
-# 	end
+  cat_images_in_app_rb = ["colonel_meow.jpg", "grumpy_cat.png"]
+  dog_images_in_app_rb = ["shibe.png"]
+
+  gallery_name = params[:gallery_name]
+  erb(gallery_name.to_sym, {
+    locals: {
+      cat_images: cat_images_in_app_rb,
+      dog_images: dog_images_in_app_rb
+    }
+  })
+
+end
