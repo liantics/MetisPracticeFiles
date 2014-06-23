@@ -1,0 +1,8 @@
+As a nice person, I want to add warnings about bad driving conditions on a road (like deep mud, downed trees, and washboard), to enable others to avoid them. I should be able to specify the town, the road I’m on, an optional photo, and a description.
+
+As a driver, I want to know if there are bad roads on my route, and be able to find the best route to avoid them. I should be able to enter a starting address and a destination, and see an overview of my route with obstacles marked. I should be able to tell how serious an obstacle is when I look at the overview, and should be able to drill down into the obstacle to see if it’s something that won’t really bother me. I should be able to expect that the most recent information is being displayed. 
+
+As a driver, I also want to know how accurate and/or current a warning is. I should be able to see that information, and should also be able to provide updates if I have more recent information. 
+
+ 
+
